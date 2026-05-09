@@ -13,7 +13,7 @@ export const getConfig = (key, defaultValue = '') => {
 export const getApiUrl = () => {
   const apiUrl = getConfig(
     'VITE_API_URL',
-    'http://13.202.73.32:8080/api'
+    'http://<YOUR EC2 PUBLIC IP>:8080/api'
   );
 
   console.log('API URL:', apiUrl);
@@ -24,7 +24,7 @@ export const getApiUrl = () => {
 export const getApiBaseUrl = () =>
   getConfig(
     'VITE_API_BASE_URL',
-    'http://13.202.73.32:8080'
+    'http://<YOUR EC2 PUBLIC IP>:8080'
   );
 
 export const getAppTitle = () =>
