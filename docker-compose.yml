@@ -1,29 +1,18 @@
-version: '3.8'
-
 services:
   backend:
     build:
-      context: ./backend
+      context: .
+      dockerfile: backend/Dockerfile
     container_name: easycrud-backend
     ports:
       - "8080:8080"
-    networks:
-      - easycrud-network
 
   frontend:
     build:
-      context: ./frontend
-      args:
-        BACKEND_HOST: backend
-        BACKEND_PORT: 8080
+      context: .
+      dockerfile: frontend/Dockerfile
     container_name: easycrud-frontend
     ports:
-      - "3000:3000"
+      - "3000:80"
     depends_on:
       - backend
-    networks:
-      - easycrud-network
-
-networks:
-  easycrud-network:
-    driver: bridge
