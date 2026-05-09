@@ -134,17 +134,6 @@ sudo apt install mariadb-client -y
 | DB Name       | `student_db` |
 | Username      | `admin`      |
 | Password      | `redhat123`  |
-| Public Access | Yes          |
-
----
-
-## RDS Security Group
-
-Allow inbound port:
-
-| Port | Source    |
-| ---- | --------- |
-| 3306 | 0.0.0.0/0 |
 
 ---
 
