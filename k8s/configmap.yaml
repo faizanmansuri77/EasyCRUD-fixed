@@ -1,0 +1,8 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: easycrud-config
+  namespace: easycrud
+data:
+  DB_HOST: mariadb
+  DB_NAME: studentdb
