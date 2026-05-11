@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: frontend
+  namespace: easycrud
+spec:
+  replicas: 2
+
+  selector:
+    matchLabels:
+      app: frontend
+
+  template:
+    metadata:
+      labels:
+        app: frontend
+
+    spec:
+      containers:
+      - name: frontend
+        image: orionpax77/easycrud-frontend:latest
+
+        ports:
+        - containerPort: 80
+
+        resources:
+          requests:
+            memory: "256Mi"
+            cpu: "100m"
+
+          limits:
+            memory: "512Mi"
+            cpu: "250m"
