@@ -33,7 +33,7 @@ pipeline {
             }
 
             steps {
-                withSonarQubeEnv('sonarqube') {
+                withSonarQubeEnv('sonar-server') {
                     dir('backend') {
                         sh '''
                         mvn sonar:sonar \
