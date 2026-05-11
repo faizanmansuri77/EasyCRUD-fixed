@@ -8,14 +8,14 @@ pipeline {
 
     environment {
         DOCKER_IMAGE = "orionpax77/easycrud-backend"
-        SONAR_HOST_URL = "http://SONAR_SERVER_IP:9000"
+        SONAR_HOST_URL = "http://13.204.71.40:9000/"
     }
 
     stages {
 
         stage('Checkout') {
             steps {
-                git branch: 'main', url: 'YOUR_GITHUB_REPO_URL'
+                git branch: 'main', url: 'https://github.com/faizanmansuri77/EasyCRUD-fixed.git'
             }
         }
 
@@ -73,7 +73,7 @@ pipeline {
             steps {
                 withCredentials([
                     usernamePassword(
-                        credentialsId: 'dockerhub-creds',
+                        credentialsId: 'docker-cred',
                         usernameVariable: 'DOCKER_USER',
                         passwordVariable: 'DOCKER_PASS'
                     )
